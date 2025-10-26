@@ -1,0 +1,303 @@
+﻿
+Thank you for purchasing this asset!
+Don't forget to leave an honest review on the Asset Store.
+
+
+________________________________________ INDEX
+
+1. ONLINE DOCUMENTATION
+2. ABOUT RENDER PIPELINES
+3. HOW IT WORKS
+4. IMPLEMENTATION (HOW TO USE)
+5. ELEVATOR BUILDER OPTIONS
+6. ELEVATOR BRAIN OPTIONS
+7. IMPLEMENTATION WITH ANOTHER 1ST PERSON CONTROLLER
+8. ADVANCED USE
+9. CREDITS AND CONTACT
+
+
+
+
+
+________________________________________ 1. ONLINE DOCUMENTATION
+
+Keep in mind there is an online documentation that will always be updated and where the most frequent questions will be answered: https://www.pipasjourney.com/damianGonzalez/old_elevator
+It is highly recommended to follow that link instead of reading this document.
+
+
+
+
+
+________________________________________ 2. ABOUT RENDER PIPELINES
+
+This "Old Elevator" asset is fully supported in:
+- Built-in Render Pipeline: https://assetstore.unity.com/packages/slug/195576
+- URP (Universal Render Pipeline, formerly LWRP): https://assetstore.unity.com/packages/slug/195574
+- HDRP (High Definition Render Pipeline): https://assetstore.unity.com/packages/slug/195562
+
+With the double purpose of considerably reducing the size of the package and speeding up the implementation process, the 3 mentioned versions are contained in separate assets, all available in the Unity Asset Store. This documentation corresponds to "Old Elevators" in all versions.
+
+
+
+
+
+________________________________________ 3. HOW IT WORKS / WHAT DOES THIS ASSET DO?
+
+This asset provides a fully functional elevator system, containing:
+- A builder module to generate multiple personalized elevators and their environments
+- All the necessary prefabs to build everything with a single click
+- High quality textures (2048 x 2048)
+- 27 sounds for the elevator, lights, doors, switches and buttons
+- 1 simple first person controller with Rigidbody
+- 1 simple first person controller with Character Controller
+
+Important: Everything in both the demo scene video and the technical video ([link]) can be done with this asset as it is, you won't need to install anything else.
+
+Using both the "Builder" module and the stand-alone "Brain" module, you'll be able to choose and configure:
+- How many floors you want to create
+- The layout of the buttons on the pad
+- The type of exterior doors
+- The type of caller
+- How much the elevator shakes
+- How often the lights flicker
+- How secure (or insecure) your elevator is going to be
+- Whether you want dust particles in the elevator or not
+- Whether you want to add hallways or not
+- ... And many more options (detailed below)
+
+Once you build your elevator and its surroundings, you will have a 100% functional custom elevator system, which will allow you to travel to every floor, open and close the doors, turn both elevator and hallways lights on and off, call the elevator ... and even to pull the emergency brake!
+
+Inside the Elevator Builder module, below the options you will find 3 buttons:
+- Build: to build new custom elevators. A new child of the builder will be generated.
+- Clear all: to remove everything inside the Builder, to start over.
+- Detach: to move your creation outside the Builder.
+
+Keep in mind that at all times the elevators (whether or not they are childs of the Builder object) are completely autonomous and do not need the Builder to fully function. Therefore, once you have your elevator ready and you have pressed Detach, you can remove the Builder, it will no longer be necessary.
+
+
+
+
+________________________________________ 4. IMPLEMENTATION (HOW TO USE)
+
+Implementing this asset is extremely simple. If you have any doubts, both in the online documentation and in the Asset Store page, you can watch a video where it is implemented from scratch.
+
+Step 1 > If you don't have one already, create a new project in Unity in HDRP
+
+Step 2 > Import the asset:
+- option 1: Inside the Unity Asset Store, press the "Open in Unity" button
+- option 2: Inside Unity, go to the Package Manager, search for the asset you bought, press "download" and then press "import"
+
+Step 3 > Drag and drop the Elevator Builder to your scene: Inside "Prefabs" folder you will see a prefab called "Elevator builder". That's the "builder" we talked about and it's already preconfigured. Drag it to your scene.
+
+Step 4 (optional) > Customize. Without entering Play mode (that's important, or you will lose your creation when you press Stop), configure the Builder: how many floors do you want, among many other options we will throughously see below.
+
+Step 5 > Build. Without going into Play mode, click on the "Build" button. This will automatically generate the entire elevator and its surroundings, including the pit, the elevator with its buttons, the corridors, lights, callers, etc.
+
+If you want to change something, you can press "Clear all" to delete what you have done before and rebuild as many times as you want.
+
+When you are satisfied, you can press the "Detach" button to move your elevator out of the Builder. As we said above, once you have your elevator ready and you have pressed "Detach", you can remove the Elevator Builder (the entire object) from the Hierarchy, it will no longer be necessary.
+
+Step 6 > If you don't have a first person controller, you can use one of the sample ones included in the package. You will find them in "Prefabs/Simple First Person Controllers" folder. Check if you don't already have a camera in your scene, and just drag and drop one of the controller prefabs inside a hallway. 
+
+That's it. Just play your scene.
+
+NOTE 1: If you want to implement a different first person controller, see section 7 of this documentation: "implementation with another controller"
+
+NOTE 2 (exclusive to Built-in Render Pipeline):
+In the Built-in Render Pipeline version, the Post-processing effects in the Demo scene are not included out-of-the-box. To install them follow these steps:
+1) If you don't have it already, go to the Package Manager and install the "Post Processing" package from Unity Technologies
+2) In the main folder ("Old Elevator Built-in RP") you will find a package with the setup. Double click on it to install it.
+3) Enter the new folder called "Post processing".
+4) Take the two prefabs inside and drop them on your scene. (If you already had a controller or camera, remove them) 
+
+
+
+________________________________________ 5. BUILDER OPTIONS
+
+Inside the "New Elevator Setup" section you will find:
+
+- Floors: It is an integer between 2 and 30 that represents the number of floors that will be built. The limit of 30 floors is only given by the size of the button pad. If you need more floors, you can enter the script and remove the [Range...] attribute from the definition of the Floors variable. (...and you'll maybe have to make enough room for the buttons)
+
+- First number: Represents the number of the lower floor. The default is 1. That way, the floors will be 1, 2, 3, and so on. If you want your lower floor to be 0 or some letter (or even if you want a basement below your 1st floor) you can leave it at 0 and then replace the "0" sprite in the walls with the letter you want, or remove it altogheter.
+
+- Distance Between Floors: Represents the distance in units (meters) between the ceiling of one level and the floor of the level immediately above. The default is 3.
+
+- Add Floor Numbers In Pit Walls: Check this option if you want numbers painted in black on the front and rear walls of the elevator pit.
+
+- Interact With Inner Doors Panes As One: Check this option if you want to interact with either of the two inner door panels as they were one. If it is unchecked, you can open each pane separately.
+
+- Add Dust Particles In Elevator: If you check this option you will see small dust particles floating inside the elevator.
+
+- Player: A reference to the main player. If left empty, the script will try to find the player by his "Player" tag. This is only useful if the Elevator Brain's "Avoid Bouncing" option is checked.
+
+
+Inside the "Halls Setup" section you will find:
+
+- Add Halls: Each hall contains two children: the functional part (which contains the external doors and the caller) and the non-functional part (which contains the corridor itself). If you uncheck this option, the non-functional part will be disabled, keeping only the functional part alive.
+
+- Caller Type: There are two types of caller for you to choose. One more stylized with two independent lights and another more rustic. Try them both to see which one suits your game needs better.
+
+- Add Outer Doors: If unchecked, no doors will be added in the corridors.
+
+- Outer Doors Type: You can choose between a hinged door (default option) or an accordion one, similar to interior doors.
+
+- Interact With Outer Doors Panes As One: Similar to "Interact With Inner Doors Panes As One".
+
+- Add Dust Particles In Halls: If you check this option you will see small dust particles floating in the corridors (if the "Add Halls" option is checked).
+
+
+Inside the "Buttons Pad Setup" section you will find:
+
+- Buttons Layout: You can choose if you want 1, 2, 3 columns, or "auto" for letting the builder to choose. If you choose "auto", 1 column of buttons will be used for 2 ~ 9 stor, 2 columns of buttons for 10 ~ 20 floors and 3 columns above 20 floors.
+
+- Vertical Space Between Buttons: Self explanatory. It is recommended to leave its default value: 0.055.
+
+
+The "Parts Prefabs" section contains references to the various internal prefabs that the Builder uses to generate the entire structure. It is recommended to leave it as it is.
+
+
+
+
+
+________________________________________ 6. ELEVATOR BRAIN OPTIONS
+
+"Elevator Brain" is the main script of the elevator, in charge of its movements, sounds, shaking, etc. It contains many options that you can configure once you have pressed "Build" in the builder. Keep in mind, however, that every change you made will be lost if you press "Clear all" in the Builder while the elevator is still attached to it.
+
+The first 4 sections of the "Elevator Brain" script can be relevant to you. The rest of them are intended for internal use and should be left intact.
+
+Inside the "Main Settings" section you will find:
+
+- Units Per Second: The normal speed of the elevator.
+
+- Slow Down Near Arriving: If this option is checked, the elevator will progressively decrease its speed when it is less than 1 unit (meter) from its destination.
+
+- Slowing Down Effect: The higher this value, the greater the braking effect described in the previous variable will be.
+
+- Initial Stop: The initial position of the elevator. Note that this is a variable of type Transform and must be one of the children of "Stops". (Stops is the only child of the "elevator brain" and contains each of the positions in which the elevator must stop).
+
+
+Section "Avoid player bouncing while traveling":
+
+Either with Rigidbody-based or Character Controller-based characters, the player usually tends to bounce or shake when a platform he is standing on moves vertically. This functionality recognizes when the player is inside the elevator while moving, and forces him to move smoothly along with the elevator (and not as a product of physics), avoiding the aforementioned effect.
+
+In this section you will find some variables:
+
+- Avoid Bouncing: Whether you want to use this function or not.
+
+- Player: A reference to the main player. If left unassigned, an attempt will be made to automatically find the player by his "Player" tag.
+
+- Dist To Floor: Distance from the player's pivot point to the floor. If you find the player still bouncing with "Avoid Bouncing" active and the player variable assigned, try raising the value of this variable. (It may be a small value and the code does not detect that the player is actually grounded.)
+
+
+Inside the "Safety measures" section you will find several variables listed below, which, when they are all checked, the usual safety measures of elevators are simulated. Unchecking any of them will result in a behavior that in the real world would be considered dangerous.
+
+- Outer Doors Must Be Fully Closed: When checked, the elevator will not start to move while any of the external doors is open.
+
+- Inner Doors Must Be Fully Closed: When checked, the elevator will not start to move if the interior doors of the elevator are open.
+
+- Lock Outer Doors In Other Floors: When checked, the exterior doors of all floors will be locked as soon as the elevator starts moving. (They will unlock only when the elevator is closer than 0.1 unit (10 centimeters) from its floor)
+
+- Emergency Stop If Inner Doors Open: If this option is checked and the internal doors are opened while the elevator is moving, the emergency brake will be triggered. Note that if this happens while the elevator is a short distance away from any floor (even if it is not the destination), the corresponding outer door will be unlocked.
+
+- Resume Travel After Doors Close: If checked and the emergency brake was activated, travel will resume when the internal doors are closed again.
+
+
+
+Inside the "Not everything is pink" section you will find some options that give a touch of realism (or dread, depending on the intensity) to the travelling experience:
+
+- Light Flickering: How often and for how long the elevator lights blinks. Possible values ​​are:
+- No flickering
+- Almost Unnoticeable
+- Annoying
+- Heavy
+- Nightmare
+
+ As a reference, in "almost unnoticeable" mode the blinking occurs after a random time between 3 and 6 seconds (quite apart) and in each blink the light stays off for a random time between 0.05 and 0.1 seconds (very little).
+
+  On the other hand, in "nightmare" mode the flickering occurs after a random time between 0.05 and 0.5 seconds (very short) and in each blink the light stays off for a random time between 0.1 and 1.5 seconds (quite a long time).
+
+ Other modes handle intermediate values ​​between these two.
+
+- Elevator Shaking: Similarly and with options almost identical to the previous variable, this controls how often and how hard the elevator shakes while moving.
+
+The following 3 variables control how much the elevator shakes at certain times:
+- Shake When Travel Begins
+- Shake When Travel Ends
+- Shake On Emergency Stop
+
+The other variables in the "Elevator Brain" are for internal use and should be left intact. Of these, the only ones that can add value to the user are:
+- Moving Light Color: the color the lights of the callers will have while the elevator is in motion
+- Emergency Stop Color: the color the emergency brake light will have while it is activated
+
+
+
+
+
+________________________________________ 7. IMPLEMENTATION WITH ANOTHER CONTROLLER
+
+This asset includes two simple first-person controllers (one with Rigidbody and one with Character Controller), which allow you to walk around, jump, and interact with doors, buttons and switches with the E key, the mouse button, Ctrl key or the A button of the joystick.
+
+Nevertheless, you might prefer to use another first person controller and not one of the ones provided in this package. The important thing to keep in mind is your controller must interact with the elevators. To do that you would have to follow one of these methods:
+
+
+METHOD 1: Reuse part of the provided controller.
+A quick glance at either one the two prefabs contained in the "Prefabs/Simple First Person Controllers" will let you see that these controllers have a camera as a child and also a canvas with an icon. You will also see that there is a script called "ElevatorInteraction" attached to the camera object and that the icon has a script attached to it called "InteractionIcon". The former is in charge of looking for something that can be interacted with, and asks the second to color the icon white or green depending on whether or not it has found something.
+
+So, you should replicate that:
+- Copy that Canvas with its icon and paste it inside your controller's camera.
+- Add the "ElevatorInteraction" script to your controller's camera.
+- Finally, configure that script you added, dragging the icon to the "Interact Icon" variable and choosing the ElevatorInteractable layer mask. The latter is not strictly necessary, since the code will try to find the Layer by itself and assign it.
+
+
+METHOD 2: Adapting your controller, adding new code
+If you have experience with code, you can copy some of the code from the ElevatorInteraction.cs script into your controller's. All it does is cast a RayCast forward looking for the ElevatorInteractable layer.
+
+If the raycast finds a door, you can access the door's DoorTrigger script and execute Toggle().
+If the raycast finds a button or switch, you can access its ElevatorButton script and execute Press().
+
+The code in ElevatorInteraction.cs is very clear and well commented. With a minimum of experience you will be able to understand what it is about.
+
+
+
+
+
+________________________________________ 8. ADVANCED USE
+
+If you want more control over the elevator and its surroundings, keep these tips in mind:
+
+1) The Builder uses prefabs as pieces to create each element. If these prefabs were modified (even after building), the result will change immediately.
+
+2) Similar to first tip, you could create your own prefabs (i.e. your own hallway) or variants (i.e. take the original hallway and save it as a prefab variant) and then, in the Builder script, you could reference your new prefab. The builder will use whatever parts you feed into it.
+
+3) If you want to move the elevator from code, you can access some public methods prepared for this. Follow these steps:
+
+- first include the OldElevator namespace at the top:
+using OldElevator;
+
+- make a reference to the elevator that you want to control:
+public ElevatorBrain elevator;
+
+- and then you can force the elevator to move calling this public method:
+elevator.GoToFloor (...);
+
+feeding it with an integer that represents the floor number, where the bottom floor is always 0, regardless of the value the Builder had in "First Number". For example: if GoToFloor(3) is executed, the elevator will go to the GetChild(3) of the Stops object (that is, the 4th child).
+
+- alternatively, instead of GoToFloor (int), you could call GoToPosition (Vector3), with the risk that this position may not coincide with a natural stop of the elevator. Note that the position of the parameter will correspond to relative values ​​(localPosition) to the Stops object, not to absolute values, (therefore [0,0,0] should be the bottom floor) In any case, only the Y value of the argument will be taken into account. The X and Z position of the elevator will always remain unchanged.
+
+4) If you want to modify the speed with which the exterior doors open and close, you can go to one of them (or directly to the "Prefabs/Elevator Parts/ExteriorDoors" prefab) and change any of these properties:
+
+- movementType: If you change from CustomCurve to Normal, one interaction will open the door and another interaction will be required to close it.
+
+- angleCurve: This variable allows you to draw a custom curve where the X axis represents time and the Y axis represents the angle of the door's rotation.
+
+
+
+
+
+________________________________________ 9. CREDITS AND CONTACT
+
+If you have any problem using this asset you can contact us:
+
+Programming and sounds: Damián González info@pipasjourney.com
+Modeling and textures: Martín Fernández · zeonpav@gmail.com
+

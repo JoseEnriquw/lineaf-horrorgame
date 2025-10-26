@@ -1,0 +1,306 @@
+
+¡Gracias por comprar este asset!
+No olvides dejar una reseña honesta en el Asset Store.
+
+
+________________________________________ ÍNDICE
+
+1. DOCUMENTACIÓN ONLINE 
+2. PRESENTACIONES Y RENDER PIPELINES
+3. CÓMO FUNCIONA
+4. IMPLEMENTACIÓN (MODO DE USO)
+5. OPCIONES DEL BUILDER
+6. OPCIONES DEL ELEVATOR BRAIN
+7. IMPLEMENTACIÓN CON OTRO CONTROLADOR
+8. USO AVANZADO
+9. CRÉDITOS Y CONTACTO
+
+
+
+
+
+________________________________________ 1. DOCUMENTACIÓN ONLINE 
+
+Ten en cuenta que existe una documentación online que se mantendrá siempre actualizada y donde se responderán las preguntas más frecuentes: https://www.pipasjourney.com/damianGonzalez/old_elevator
+Se recomienda seguir ese link en lugar de leer este documento.
+
+
+
+
+
+________________________________________ 2. PRESENTACIONES Y RENDER PIPELINES
+
+Este asset de "Old Elevators" tiene versiones compatibles para:
+- Built-in Render Pipeline: https://assetstore.unity.com/packages/slug/195576
+- URP (Universal Render Pipeline, anteriormente LWRP): https://assetstore.unity.com/packages/slug/195574
+- HDRP (High Definition Render Pipeline): https://assetstore.unity.com/packages/slug/195562
+
+Con el doble objetivo de reducir considerablemente el tamaño del paquete y de agilizar la implementación, las 3 presentaciones mencionadas están contenidas en assets independientes, todos disponibles en el Unity Asset Store. Esta documentación corresponde a "Old Elevators" en todas sus presentaciones.
+
+
+
+
+
+________________________________________ 3. CÓMO FUNCIONA / QUÉ HACE ESTE ASSET?
+
+Este asset provee un sistema de ascensor completamente funcional, que contiene:
+- Un módulo constructor para generar múltiples ascensores y sus entornos, de forma personalizada
+- Todos los prefabs necesarios para construir todo con un solo click
+- Texturas de alta calidad (2048 x 2048)
+- 27 sonidos para el ascensor, luces, puertas, interruptores y botones
+- 1 controlador simple en primera persona con Rigidbody 
+- 1 controlador simple en primera persona con Character Controller
+
+Importante: Todo lo que se ve en el video de muestra ([link]) podrás hacerlo con este asset tal como es, sin nada adicional.
+
+El constructor te permitirá elegir:
+- Cuántos pisos quieres crear
+- La disposición de los botones en el pad
+- El tipo de puertas exteriores
+- El tipo de llamador
+- Cuánto se sacude el ascensor
+- Cuánto parpadean las luces
+- Cuáles medidas de seguridad rigen
+- Si quieres partículas de polvo en el ascensor
+- Si quieres agregar los pasillos o no
+- ...Y muchas opciones más (detalladas más abajo)
+
+Una vez que construyas tu ascensor y su entorno, tendrás un ascensor personalizado 100% funcional por el que podrás viajar a todos los pisos, abrir y cerrar las puertas, encender y apagar las luces del ascensor y de los pasillos, llamar al ascensor... y hasta accionar el freno de emergencia.
+
+Dentro del Elevator Builder, debajo de todas las opciones verás 3 botones:
+- Build (construir), para construir un nuevo ascensor como lo pediste. Se generará un nuevo hijo del builder.
+- Clear all (eliminar todo), para eliminar todo lo que haya dentro del Builder, para comenzar de nuevo.
+- Detach (desligar), para mover el ascensor creado fuera del Builder.
+
+En todo momento los ascensores (estén o no dentro del Builder) son completamente autónomas y no necesitan del Builder. Por eso, una vez que ya tengas tu ascensor listo y hayas presionado Detach, puedes eliminar el Builder, ya no será necesario.
+
+
+
+
+________________________________________ 4. IMPLEMENTACIÓN (MODO DE USO)
+
+Implementar este asset es muy simple. Si tienes alguna duda, tanto en la documentación online como en la página del Asset Store puedes ver un video donde se implementa desde cero
+
+Paso 1 > Si no lo tienes, crea un nuevo proyecto en Unity en HDRP
+
+Paso 2 > Importa el asset:
+	- opción 1: Dentro del Unity Asset Store, presiona el botón "Open in Unity"
+	- opción 2: Dentro de Unity, ve al Pacakage Manager, busca el asset, descárgalo y luego impórtalo
+
+Paso 3 > Arrastra el Elevator Builder a tu escena: Dentro de la carpeta "Prefabs" verás el prefab llamado "Elevator builder". Arrástralo a tu escena.
+
+Paso 4 (opcional) > Personalizar. Sin entrar en modo Play, configura el Builder: cuántos pisos quieres, entre otras variables que veremos más abajo
+
+Paso 5 > Construir. Sin entrar en modo Play, haz click en el botón "Build". Esto generará automáticamente todo el ascensor y su entorno, incluido el foso, el ascensor con sus botones, los pasillos, luces, llamadores, etc. 
+
+	Si quieres cambiar algo, puedes presionar "Clear all" para eliminar lo que hayas hecho antes y volver a construir las veces que quieras. 
+
+	Cuando estés conforme, puedes presionar el botón "Detach" para mover tu ascensor fuera del Builder. Como ya dijimos arriba, una vez que ya tengas tu ascensor listo y hayas presionado Detach, puedes eliminar el Elevator Builder (el objeto completo) de la Hierarchy, ya no será necesario.
+
+Paso 6 > Si no tienes un controlador en primera persona, puedes usar uno de los de muestra que incluye el paquete. Los encontrarás en "Prefabs/Simple First Person Controllers. Colócalo en algún hall. 
+
+Listo. Puedes poner Play y jugar.
+
+NOTA 1: Si deseas implementar otro controlador en primera persona, lee la sección 7 de esta documentación: "implementación con otro controlador"
+
+NOTA 2 (exclusiva para Built-in Render Pipeline):
+En la versión para el Built-in Render Pipeline, los efectos de Post-processing en la escena de Demo no están instalados. Para instalarlos sigue estos pasos:
+1) Si no lo tienes ya, ve al Package Manager e instala el paquete "Post Processing" de Unity Technologies
+2) En la carpeta principal ("Old Elevator Built-in RP") encontrarás un paquete con la configuración. Haz doble click sobre él para instalarlo. 
+3) Entra en la nueva carpeta llamada "Post processing".
+4) Toma los dos prefabs que hay dentro y suéltalos en tu escena. (Si ya tenías un controlador o una cámara, elimínalos antes)
+
+
+
+
+
+________________________________________ 5. OPCIONES DEL BUILDER
+
+Dentro de la sección "New Elevator Setup" (configuración de un nuevo ascensor) encontrarás:
+
+- Floors (Cantidad de pisos): Es un número entero entre 2 y 30 que representa la cantidad de pisos que se construirán. El límite de 30 está dado únicamente por el lugar máximo que permite el pad de botones. Si necesitas más pisos, puedes entrar al script y eliminar el atributo [Range...] de la definición de la variable Floors.
+
+- First number (primer número): Representa el número del piso inferior. El valor predeterminado es 1, de modo que los pisos serán 1, 2, 3, etc. Si quieres que tu piso inferior sea 0, L (lobby), PB (planta baja), o similar, puedes dejarlo en 0 y luego reemplazar el sprite que se dibuja en ese piso por la letra que quieras.
+
+- Distance Between Floors (distancia entre pisos): Representa la distancia en unidades entre el techo de un nivel y el piso del nivel inmediatamente superior. El valor predeterminado es 3.
+
+- Add Floor Numbers In Pit Walls (Agregar número de piso en las paredes del foso): Si marcas esta opción se agregarán números pintados en negro sobre las paredes frontales y traseras del foso del ascensor.
+
+- Interact With Inner Doors Panes As One (Interactuar con los paños de las puertas internas como si fuera uno): Si marcas esta opción, al interactuar con cualquiera de los dos paños de la puerta interna abrirás ambos. Si queda desmarcado, podrás abrir cada paño por separado.
+
+- Add Dust Particles In Elevator (Agregar partículas de polvo en el ascensor): Si marcas esta opción podrás ver pequeñas partículas de polvo flotando en el interior del ascensor.
+
+- Player: Una referencia al jugador principal. Si se deja sin asignar, se intentará buscar al jugador automáticamente por su tag "Player". Esto únicamente es útil si la opción "Avoid Bouncing" del Elevator Brain está activa.
+
+
+Dentro de la sección "Halls Setup" (configuración de los pasillos) encontrarás:
+
+- Add Halls (Agregar pasillos): Cada pasillo contiene dos hijos: la parte funcional (que contiene las puertas externas y el llamador) y la parte no funcional (que contiene el pasillo en sí mismo). Si desactivas esta opción se eliminará la parte no funcional, conservando el resto.
+
+- Caller Type (tipo de llamador): Hay dos tipos de llamador disponible. Uno más estilizado con dos luces independientes y otro más rústico. Intenta con uno y otro a ver cuál va mejor con tu juego.
+
+- Add Outter Doors (Agregar puertas exteriores): Si desactivas esta opción no se agregarán puertas en los pasillos.
+
+- Outter Doors Type (Tipos de puerta exterior): Puedes elegir entre "Hinged" (con bisagra, el valor predeterminado) o "Accordion" (puerta de acordeón, similares a las puertas interiores).
+
+- Interact With Outter Doors Panes As One (Interactuar con los paños de las puertas externas como si fuera uno): Similar a "Interact With Inner Doors Panes As One".
+
+- Add Dust Particles In Halls (Agregar partículas de polvo en los pasillos): Si marcas esta opción podrás ver pequeñas partículas de polvo flotando en los pasillos (si la opción "Add Halls" está activa).
+
+
+Dentro de la sección "Buttons Pad Setup" encontrarás:
+
+- Buttons Layout (disposición de los botones): Podrás elegir si quieres 1, 2, 3 columnas, o automático. Si eliges "automático", se usará 1 columna de botones para 2~9 pisos, 2 columnas de botones para 10~10 pisos y 3 columnas para más de 20 pisos.
+
+- Vertical Space Between Buttons (espacio vertical entre botones): Se explica por sí mismo. Se recomienda dejar su valor predeterminado: 0.055. 
+
+
+La sección "Parts Prefabs" contiene referencias a los distintos prefabs internos que usa el Builder para generar toda la estructura. Se recomienda dejarlo como está.
+
+
+
+
+
+________________________________________ 6. OPCIONES DEL ELEVATOR BRAIN
+
+El "Elevator Brain" (cerebro del ascensor) es el script principal encargado de su funcionamiento, y contiene muchas opciones que puedes configurar una vez que hayas presionado "Build". Ten en cuenta, sin embargo, que las opciones que elijas se perderán si desde el Builder presionas "Clear".
+
+Las 4 primeras secciones del script del "Elevator Brain" son las que contienen opciones útiles.
+
+Dentro de la sección "Speed" (configuración de un nuevo ascensor) encontrarás:
+
+- Units Per Second (unidades por segundo): Es la velocidad normal del ascensor.
+
+- Slow Down Near Arriving (Frenar al aproximarse a destino): Si se activa esta opción el ascensor disminuirá progresivamente su velocidad cuando esté a menos de 1 metro de su destino.
+
+- Slowing Down Effect (efecto de frenado): Mientras más alto sea este valor, mayor será el efecto de frenado descripto en la variable anterior.
+
+- Initial Stop (parada inicial): La posición inicial del ascensor. El valor de esta variable es de tipo Transform y debe ser uno de los hijos de "Stops". Stops es el único hijo del "elevator brain" y contiene cada una de las posiciones en las que el ascensor debe detenerse.
+
+
+Sección "Avoid player bouncing while traveling" (evitar que el jugador rebote mientras viaja):
+Tanto con controladores con Rigidbody como con controladores con Character Controller, el jugador normalmente tiende a rebotar o temblar cuando una plataforma sobre la que está parado se mueve verticalmente. Esta funcionalidad reconoce cuando el jugador está en el ascensor en movimiento y lo obliga a moverse fluidamente junto con el ascensor (y no como producto de las físicas), evitando el efecto mencionado.
+
+En esta sección encontrarás algunas variables:
+
+- Avoid Bouncing (evitar rebote): Si quiere utilizarse esta función o no.
+
+- Player: Una referencia al jugador principal. Si se deja sin asignar, se intentará buscar al jugador automáticamente por su tag "Player".
+
+- Dist To Floor (distancia al piso): Distancia desde el punto pivote del jugador al piso. Si el jugador sigue rebotando aún con "Avoid Bouncing" activo y el jugador asignado, intenta subir el valor de esta variable. (Quizá sea un valor pequeño y el código no detecte que el jugador realmente está tocando el suelo.)
+
+
+Dentro de la sección "Safety measures" (medidas de seguridad) encontrarás las siguientes variables, que cuando están todas activas se simulan las medidas de seguridad normales de los ascensores. Desactivar cualquiera de ellas resultará en un comportamiento extraño, que en el mundo real se consideraría peligroso.
+
+- Outter Doors Must Be Fully Closed (puertas externas deben estar completamente cerradas): Con esta opción activa el ascensor no comenzará a moverse si alguna de las puertas exteriores está abierta.
+
+- InnerDoorsMustBeFullyClosed (puertas internas deben estar completamente cerradas): Con esta opción activa el ascensor no comenzará a moverse si las puertas interiores del ascensor están abiertas.
+
+- LockOutterDoorsInOtherFloors (trabar puertas exteriores de otros pisos): Con esta opción activa las puertas exteriores de todos los pisos se bloquearán cuando comience el movimiento del ascensor.
+
+- EmergencyStopIfInnerDoorsOpen (freno de emergencia si las puertas internas se abren): Con esta opción activa, si se abren las puertas internas mientras el ascensor se mueve, se disparará el freno de emergencia. Nótese que si esto sucede cuando el ascensor está a corta distancia de un piso (aunque no sea el de destino), la puerta exterior se desbloqueará.
+
+- ResumeTravelAfterDoorsClose (continuar viaje cuando las puertas se cierren): Con esta opción activa, si se activó el freno de emergencia, el viaje se retomará cuando las puertas internas vuelvan a estar cerradas. 
+
+
+
+Dentro de la sección "Not everything is pink" (no todo es color de rosa) encontrarás algunas opciones que le dan un toque de realismo (o miedo, según la intensidad) a la experiencia de viajar:
+
+- Light Flickering (parpadeo de luces): Cada cuánto y durante cuánto tiempo parpadean las luces del ascensor. Los valores posibles son:
+		- No flickering (sin parpadeo)
+		- Almost Unnoticeable (casi inadvertible)
+		- Annoying (molesto)
+		- Heavy (mucho)
+		- Nightmare (pesadilla)
+
+  Como referencia, en modo "almost unnoticeable" el parpadeo se produce luego de un tiempo al azar entre 3 y 6 segundos (mucho) y en cada parpadeo la luz se mantiene apagada durante un tiempo al azar entre 0.05 y 0.1 segundos (muy poco).
+
+  En cambio, en modo "nightmare" el parpadeo se produce luego de un tiempo al azar entre 0.05 y 0.5 segundos (muy poco) y en cada parpadeo la luz se mantiene apagada durante un tiempo al azar entre 0.1 y 1.5 segundos (bastante tiempo).
+
+  Los modos intermedios manejan valores intermedios entre éstos dos.
+
+- Elevator Shaking (temblor del ascensor): De modo similar y con opciones casi idénticas a la variable anterior, esto controla cada cuánto y cuán intensamente tiembla el ascensor mientras se mueve.
+
+Las siguientes 3 variables controlan cuánto tiembla el ascensor en determinados momentos:
+- Shake When Travel Begins (temblor al comenzar el viaje)
+- Shake When Travel Ends (temblor al finalizar el viaje)
+- Shake On Emergency Stop (temblor en freno de emergencia)
+
+Las demás variables del "Elevator Brain" son de uso interno y deberían dejarse intactas. De ellas, las únicas que pueden aportar valor al usuario son:
+- Moving Light Color: el color que tendrán las luces de los llamadores cuando el ascensor esté en movimiento)
+- Emergency Stop Color: el color que tendrá la luz del freno de emergencia cuando éste se active.
+
+
+
+
+
+________________________________________ 7. IMPLEMENTACIÓN CON OTRO CONTROLADOR
+
+Este asset incluye dos controladores simples en primera persona (uno con Rigidbody y otro con Character Controller), que permiten desplazarse, interactuar con puertas, botones e interruptores con la tecla E, o con el botón del mouse, tecla Ctrl o el botón A del joystick.
+
+De todos modos, quizá prefieras utilizar otro controlador en primera persona y no uno de los provistos en el asset. Lo que deberías tener en cuenta en ese caso es que tu controlador debe interactuar con los ascensores. Para hacer eso tendrías que seguir uno de los siguientes métodos:
+
+
+MÉTODO 1: Reutilizar parte del controlador provisto.
+Si abres cualquiera de los dos prefabs que contiene la carpeta "Prefabs/Simple First Person Controllers" verás que estos controladores tienen una cámara como hijo y también un canvas con un ícono. También verás que la cámara tiene un script llamado "ElevatorInteraction", y que el ícono del canvas tiene otro script llamado "InteractionIcon". El primero se ocupa de buscar algo con lo que se puede interactuar, y pide al segundo que se coloree el ícono de blanco o verde según haya encontrado algo o no.
+
+Entonces:
+- Copiar ese Canvas completo (con su ícono y el script del ícono) y pégalo dentro de la cámara de tu controlador.
+- Añade el script "ElevatorInteraction" a la cámara de tu controlador. 
+- Por último, configura ese script que añadiste, arrastrando el ícono a la variable "Interact Icon" y eligiendo el layer mask ElevatorInteractable. Esto último no es estrictamente necesario, el código intentará buscar el Layer y asignarlo.
+
+
+MÉTODO 2: Código propio
+Si te manejas bien con el código, puedes copiar parte del código del script ElevatorInteraction.cs dentro del código de tu controlador. Todo lo que hace es emitir un RayCast hacia adelante buscando el layer ElevatorInteractable.
+
+Si el raycast encuentra cualquier elemento con el layer ElevatorInteractable, algún ícono en la UI debería indicar la posibilidad de interacción y chequear si presiona una determinada tecla.
+Si es una puerta, puedes acceder a su script DoorTrigger y pedirle Toggle().
+Si es un botón o interruptor, puedes acceder a su script ElevatorButton y pedirle Press().
+
+El código en ElevatorInteraction.cs es sumamente claro y está comentado. Con mínimo de experiencia podrás entender de qué se trata.
+
+
+
+
+
+________________________________________ 8. USO AVANZADO
+
+Si se quiere mayor control sobre el ascensor y su entorno, téngase en cuenta:
+
+1) El Builder utiliza prefabs (a modo de piezas de Lego) para construir. Si se modifican esos prefabs (incluso después de haber construido e independizado), tu construcción cambiará.
+
+2) De manera similar, podrías crear tus propios prefabs (por ejemplo, tu propio pasillo), o variantes de los prefabs originales (por ejemplo, tomar el pasillo que viene con el asset, modificarlo y guardarlo como una variante), y luego en el Builder referenciar a los nuevos prefabs. El builder construirá con lo que sea que le digas.
+
+3) Si se quisiera mover el ascensor por código desde otro script, se puede hacer lo siguiente:
+
+	- primero incluir la librería OldElevator:
+	using OldElevator;
+
+	- hacer una referencia al ascensor que quiera controlarse:
+	public ElevatorBrain elevator;
+
+	- y luego puedes dirigir el ascensor con el método:
+	elevator.GoToFloor(...);
+
+	alimentándolo con un integer que representa el número de piso, donde el piso inferior siempre es 0, independientemente del valor que haya tenido el Builder en "First Number". Por ejemplo: si se ejecuta GoToFloor(3) el ascensor irá al GetChild(3) del objeto Stops (es decir el 4º hijo).
+
+	- alternativamente, en lugar de GoToFloor(int) puede ejecutarse GoToPosition(Vector3), con el riesgo de que esta posición puede no coincidir con una parada natural del ascensor. Téngase en cuenta que la posición del parámetro corresponderá a valores relativos (localPosition) a Stops, no a valores absolutos. En todo caso, sólo se tendrá en cuenta el valor Y del argumento. Las posiciones X y Z siempre se mantendrán estables.
+
+4) Si se quisiera modificar la velocidad con que se abren y cierran las puertas exteriores, puedes dirigirte a alguna de ellas (o directamente al prefab "Prefabs/Elevator Parts/ExteriorDoors") y cambiar alguna de estas propiedades:
+
+	- movementType: Si se cambia de CustomCurve a Normal, una interacción abrirá la puerta y será necesaria otra interacción para cerrarla.
+
+	- angleCurve: Esta variable permite dibujar una curva personalizada donde el eje X representa el tiempo y el eje Y representa el ángulo de la rotación de la puerta.
+
+
+
+
+
+________________________________________ 9. CRÉDITOS Y CONTACTO
+
+Si tienes algún problema para utilizar este asset puedes contactarnos:
+
+Programación y sonidos: Damián González · info@pipasjourney.com
+Modelado y texturas: Martín Fernández · zeonpav@gmail.com
+
+
