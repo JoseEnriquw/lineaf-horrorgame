@@ -48,7 +48,7 @@ namespace OldElevator {
                 }
             } else {
                 //can't interact
-                InteractionIcon.inst.SetInteractable(false);
+                //InteractionIcon.inst.SetInteractable(false);
             }
         }
 

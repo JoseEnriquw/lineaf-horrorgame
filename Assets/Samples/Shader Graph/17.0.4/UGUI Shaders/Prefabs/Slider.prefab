@@ -139,6 +139,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
+  defaultMaterial: {fileID: 0}
 --- !u!1 &1183170113242742973
 GameObject:
   m_ObjectHideFlags: 0
