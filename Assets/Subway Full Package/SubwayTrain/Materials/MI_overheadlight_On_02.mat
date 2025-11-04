@@ -25,12 +25,11 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _EMISSION
   - _METALLICSPECGLOSSMAP
   - _NORMALMAP
   - _OCCLUSIONMAP
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -188,7 +187,7 @@ Material:
     - _AlbedoColorVertexTint: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1.8443027, g: 1.8153346, b: 1.5932457, a: 1}
+    - _EmissionColor: {r: 0.99083716, g: 0.98534316, b: 1, a: 1}
     - _EmissiveColorMulti: {r: 0.5381523, g: 0.5381523, b: 0.5381523, a: 1}
     - _NormalMulti: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
