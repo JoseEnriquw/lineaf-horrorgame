@@ -393,8 +393,8 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 8.7215395, y: 4.010649, z: 9.516029}
-  m_BoxOffset: {x: 0.1572032, y: -0.41529012, z: -1.49926}
+  m_BoxSize: {x: 65.645935, y: 9.915885, z: 61.624504}
+  m_BoxOffset: {x: -10.938634, y: 2.5373282, z: 3.4430122}
   m_NearClip: 0.3
   m_FarClip: 1000
   m_ShadowDistance: 100
@@ -1249,71 +1249,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.022436852, y: 0.0020370441, z: 0.03134742}
   m_Center: {x: -0.000000015515925, y: -0.0006490053, z: -0.013815571}
---- !u!1 &70876056
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 70876058}
-  - component: {fileID: 70876057}
-  m_Layer: 0
-  m_Name: Reflection Probe (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!215 &70876057
-ReflectionProbe:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70876056}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
-  m_TimeSlicingMode: 0
-  m_Resolution: 128
-  m_UpdateFrequency: 0
-  m_BoxSize: {x: 15.210666, y: 6.1523695, z: 10.457977}
-  m_BoxOffset: {x: 1.6780953, y: -1.9238153, z: -0.20757675}
-  m_NearClip: 0.3
-  m_FarClip: 1000
-  m_ShadowDistance: 100
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IntensityMultiplier: 1
-  m_BlendDistance: 1
-  m_HDR: 1
-  m_BoxProjection: 0
-  m_RenderDynamicObjects: 0
-  m_UseOcclusionCulling: 1
-  m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
---- !u!4 &70876058
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70876056}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.0045735394, z: -0, w: 0.99998957}
-  m_LocalPosition: {x: 9.479647, y: 2.818, z: -41.34374}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0.524, z: 0}
 --- !u!1 &90637091
 GameObject:
   m_ObjectHideFlags: 0
@@ -5210,7 +5145,7 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 3
   overridesSubdivLevels: 0
-  mightNeedRebaking: 1
+  mightNeedRebaking: 0
   cachedTransform:
     e00: 0.9515517
     e01: 0
@@ -10931,7 +10866,7 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 3
   overridesSubdivLevels: 0
-  mightNeedRebaking: 1
+  mightNeedRebaking: 0
   cachedTransform:
     e00: 0.9515517
     e01: 0
@@ -11968,7 +11903,7 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 3
   overridesSubdivLevels: 0
-  mightNeedRebaking: 1
+  mightNeedRebaking: 0
   cachedTransform:
     e00: 0.9999946
     e01: 0
@@ -12775,7 +12710,7 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 3
   overridesSubdivLevels: 0
-  mightNeedRebaking: 1
+  mightNeedRebaking: 0
   cachedTransform:
     e00: 0.6585584
     e01: 0
@@ -13711,7 +13646,7 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 3
   overridesSubdivLevels: 0
-  mightNeedRebaking: 1
+  mightNeedRebaking: 0
   cachedTransform:
     e00: 0.65855837
     e01: 0.000000007450581
@@ -20232,7 +20167,6 @@ SceneRoots:
   - {fileID: 1355286713}
   - {fileID: 1458001649}
   - {fileID: 20616130}
-  - {fileID: 70876058}
   - {fileID: 1885960407}
   - {fileID: 796192807}
   - {fileID: 962035920}
