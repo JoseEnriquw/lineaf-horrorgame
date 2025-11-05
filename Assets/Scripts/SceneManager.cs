@@ -9,6 +9,7 @@ public class SceneManager : MonoBehaviour
     {
         // Inicia la carga asíncrona de la escena "Nivel2" de forma aditiva
         StartCoroutine(LoadSceneAsync("Hall_Principal"));
+        StartCoroutine(LoadSceneAsync("Subway_train"));
 
     }
 
