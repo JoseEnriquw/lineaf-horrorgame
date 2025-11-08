@@ -18,7 +18,7 @@ public class SceneManager : MonoBehaviour
     {
 
     }
-
+    
     IEnumerator LoadSceneAsync(string sceneName)
     {
         // SceneMode.Additive añade la escena a las ya cargadas
