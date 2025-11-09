@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WorldItem : MonoBehaviour, IInteractable
+public class WorldItem : MonoBehaviour, IInteractableItems
 {
     [SerializeField] private InventoryItem itemData;
 

@@ -1,17 +1,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controlador simplificado del inventario del jugador.
+/// 
+/// RESPONSABILIDADES:
+/// - Manejar input de equipamiento (1-5, X)
+/// - Mostrar UI de interacci贸n
+/// - Gestionar equipamiento de items
+/// 
+/// NO MANEJA:
+/// - Detecci贸n de items (RaycastDetector)
+/// - Recoger items (RaycastDetector + InventoryManager)
+/// - Interacci贸n con objetos (RaycastDetector)
+/// 
+/// FLUJO:
+/// 1. RaycastDetector detecta y maneja interacciones
+/// 2. PlayerInventory solo maneja equipamiento (1-5) y UI
+/// 3. InventoryManager gestiona el almacenamiento de items
+/// </summary>
 public class PlayerInventory : MonoBehaviour
 {
     [Header("Referencias")]
     [SerializeField] private RaycastDetector raycastDetector;
     [SerializeField] private InventoryManager inventoryManager;
 
-    [Header("Teclas")]
-    [SerializeField] private KeyCode interactKey = KeyCode.E;
-    [SerializeField] private KeyCode unequipKey = KeyCode.X;
-    [SerializeField]
-    private KeyCode[] itemKeys = new KeyCode[]
+    [Header("Input - Equipamiento")]
+    [SerializeField] private KeyCode[] itemKeys = new KeyCode[]
     {
         KeyCode.Alpha1,
         KeyCode.Alpha2,
@@ -20,12 +35,15 @@ public class PlayerInventory : MonoBehaviour
         KeyCode.Alpha5
     };
 
+    [SerializeField] private KeyCode unequipKey = KeyCode.X;
+    [SerializeField] private KeyCode interactKey = KeyCode.E;
+
     [Header("UI (Opcional)")]
     [SerializeField] private GameObject interactPrompt;
 
     void Start()
     {
-        // Auto-obtener componentes si no est醤 asignados
+        // Auto-obtener componentes si no est谩n asignados
         if (raycastDetector == null)
         {
             raycastDetector = GetComponent<RaycastDetector>();
@@ -40,38 +58,47 @@ public class PlayerInventory : MonoBehaviour
         {
             interactPrompt.SetActive(false);
         }
+
+        if (raycastDetector == null || inventoryManager == null)
+        {
+            Debug.LogError("[PlayerInventory] Referencias no encontradas", gameObject);
+        }
     }
 
     void Update()
     {
-        // Actualizar UI de interacci髇
+        // Actualizar UI de interacci贸n (muestra cuando hay target)
         UpdateInteractUI();
 
-        // Input: Interactuar (recoger)
+        // Input: Interactuar (E) - Delega a RaycastDetector
         if (Input.GetKeyDown(interactKey))
         {
-            TryPickupItem();
-        }
-
-        // Input: Equipar items
-        for (int i = 0; i < itemKeys.Length; i++)
-        {
-            if (Input.GetKeyDown(itemKeys[i]))
+            if (raycastDetector != null)
             {
-                inventoryManager.EquipItemAtSlot(i);
+                raycastDetector.Interact();
             }
         }
 
-        // Input: Desequipar
+        // Input: Equipar items (1-5)
+        HandleEquipmentInput();
+
+        // Input: Desequipar (X)
         if (Input.GetKeyDown(unequipKey))
         {
-            inventoryManager.UnequipCurrentItem();
+            if (inventoryManager != null)
+            {
+                inventoryManager.UnequipCurrentItem();
+            }
         }
     }
 
+    /// <summary>
+    /// Actualiza la UI de interacci贸n basada en si hay target visible
+    /// </summary>
     private void UpdateInteractUI()
     {
-        if (interactPrompt == null) return;
+        if (interactPrompt == null || raycastDetector == null)
+            return;
 
         bool shouldShow = raycastDetector.HasTarget;
 
@@ -81,16 +108,20 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    private void TryPickupItem()
+    /// <summary>
+    /// Maneja el input para equipar items de los slots (1-5)
+    /// </summary>
+    private void HandleEquipmentInput()
     {
-        if (!raycastDetector.HasTarget) return;
+        if (inventoryManager == null)
+            return;
 
-        IInteractable target = raycastDetector.CurrentTarget;
-        InventoryItem itemData = target.GetItemData();
-
-        if (itemData != null && inventoryManager.AddItem(itemData))
+        for (int i = 0; i < itemKeys.Length; i++)
         {
-            raycastDetector.Interact();
+            if (Input.GetKeyDown(itemKeys[i]))
+            {
+                inventoryManager.EquipItemAtSlot(i);
+            }
         }
     }
 }
