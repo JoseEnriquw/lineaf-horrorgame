@@ -16,6 +16,12 @@
       },
       "hash": "ca01fc76104cf45ea19f7a48fe9e5b53cde1b6ff"
     },
+    "com.merry-yellow.code-assist": {
+      "version": "file:com.merry-yellow.code-assist",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
