@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuUI;
@@ -8,13 +8,24 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         // Esc para pausar o reanudar
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (isPaused)
+            {
+                GameManager.Instance.SetEnablePlayerInput(true);
+                Cursor.lockState = CursorLockMode.Locked;
                 Resume();
+            }
             else
+            {
+                GameManager.Instance.SetEnablePlayerInput(false);
+                Cursor.lockState = CursorLockMode.Confined;
                 Pause();
+            }
+
+            isPaused = !isPaused;
         }
+
     }
 
     public void Pause()
