@@ -1,3 +1,4 @@
+using Assets.Scripts.UI;
 using UnityEngine;
 
 /// <summary>
@@ -133,6 +134,9 @@ public class RaycastDetector : MonoBehaviour
             {
                 Debug.LogWarning($"[RaycastDetector] Raycast tocó {hit.collider.gameObject.name} pero NO tiene IInteractable!");
             }
+
+
+
         }
         else
         {

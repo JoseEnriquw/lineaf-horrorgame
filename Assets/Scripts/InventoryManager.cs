@@ -1,5 +1,7 @@
+using Assets.Scripts.UI;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Gestor centralizado del inventario del jugador.
@@ -24,12 +26,29 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Transform equipmentParent;
 
     [Header("Items Iniciales")]
-    [SerializeField] private List<InventoryItem> startingItems = new List<InventoryItem>();
+    [SerializeField] private List<InventoryItem> startingItems = new();
 
-    private List<InventoryItem> items = new List<InventoryItem>();
+    private readonly List<InventoryItem> items = new();
     private InventoryItem currentEquippedItem;
     private GameObject currentEquippedObject;
+    private GameObject[] slots;
+    [SerializeField] private GameObject slotHolder;
     private int currentSlot = -1;
+    private bool isInventoryOpen = false;
+    
+    private static InventoryManager instance;
+    public static InventoryManager Instance => instance;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
 
     void Start()
     {
@@ -46,6 +65,34 @@ public class InventoryManager : MonoBehaviour
         foreach (var item in startingItems)
         {
             AddItem(item);
+        }
+
+        // Inicializar array de slots
+        if (slotHolder != null)
+        {
+            slots = new GameObject[slotHolder.transform.childCount];
+            for (int i = 0; i < slotHolder.transform.childCount; i++)
+            {
+                slots[i] = slotHolder.transform.GetChild(i).gameObject;
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+           isInventoryOpen = !isInventoryOpen;
+        }
+
+        if (isInventoryOpen)
+        {
+            UIManager.Instance.ShowInventoryPanel();
+        }
+        else
+        {
+            UIManager.Instance.HidePanel(UIPanelTypeEnum.Inventory);
+            GameManager.Instance.SetEnablePlayerInput(true);
         }
     }
 
@@ -85,6 +132,8 @@ public class InventoryManager : MonoBehaviour
         }
 
         items.Add(item);
+        var inventorySlot=slots[items.IndexOf(item)].GetComponent<InventorySlot>();
+        inventorySlot.SetItem(item, items.IndexOf(item));
         InventoryEvents.OnItemPickedUp.Invoke(item.itemID);
 
         Debug.Log($"[InventoryManager] ✓ {item.itemName} agregado al inventario (Slot: {items.Count})");
