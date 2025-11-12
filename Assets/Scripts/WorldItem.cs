@@ -1,3 +1,4 @@
+using Assets.Scripts.UI;
 using UnityEngine;
 
 public class WorldItem : MonoBehaviour, IInteractableItems
@@ -47,5 +48,6 @@ public class WorldItem : MonoBehaviour, IInteractableItems
 
         // Destruir el objeto
         Destroy(gameObject);
+        UIManager.Instance.HidePanel(UIPanelTypeEnum.Interaction);
     }
 }

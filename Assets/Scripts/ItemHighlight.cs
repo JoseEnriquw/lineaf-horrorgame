@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.UI;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Renderer))]
@@ -33,16 +33,16 @@ public class ItemHighlight : MonoBehaviour
     public void EnableHighlight()
     {
         if (isHighlighted || targetRenderer == null) return;
-
+        UIManager.Instance.ShowInteractionPanel();
         isHighlighted = true;
 
         // Copiar materiales actuales
-        var mats = new List<Material>(targetRenderer.sharedMaterials);
-
-        // Añadir outline
-
-        mats.Add(outlineMaskMaterial);
-        mats.Add(outlineFillMaterial);
+        var mats = new List<Material>(targetRenderer.sharedMaterials)
+        {
+            // Añadir outline
+            outlineMaskMaterial,
+            outlineFillMaterial
+        };
 
         targetRenderer.materials = mats.ToArray();
 
@@ -52,6 +52,7 @@ public class ItemHighlight : MonoBehaviour
     public void DisableHighlight()
     {
         if (!isHighlighted || targetRenderer == null) return;
+        UIManager.Instance.HidePanel(UIPanelTypeEnum.Interaction);
 
         isHighlighted = false;
 

@@ -181,6 +181,10 @@ namespace StarterAssets
             {
                 _cameraOriginalLocalPos = _mainCamera.transform.localPosition;
             }
+
+            GameManager.Instance.OnChangePlayerInput += SetEnablePlayerInput;
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void Update()
@@ -428,6 +432,13 @@ namespace StarterAssets
                               (_mainCamera != null ? _mainCamera.transform.position : transform.position);
                 AudioSource.PlayClipAtPoint(LandingAudioClip, pos, FootstepAudioVolume);
             }
+        }
+
+
+        //Events
+        public void SetEnablePlayerInput(bool enable)
+        {
+            _playerInput.enabled = enable;
         }
     }
 }
