@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    public bool IsPaused { get; private set; }
+
     // Evento que notifica el cambio de estado de bloqueo de paneles.
     public Action<bool> OnChangePlayerInput;
 
@@ -30,5 +32,10 @@ public class GameManager : MonoBehaviour
         OnChangePlayerInput?.Invoke(enable);
         if (enable) Cursor.lockState = CursorLockMode.Locked;
         else Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void SetPaused(bool paused)
+    {
+        IsPaused = paused;
     }
 }

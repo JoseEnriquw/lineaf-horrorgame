@@ -12,14 +12,14 @@ public class PauseMenu : MonoBehaviour
         {
             if (isPaused)
             {
-                GameManager.Instance.SetEnablePlayerInput(true);
-                Cursor.lockState = CursorLockMode.Locked;
+                //GameManager.Instance.SetEnablePlayerInput(true);
+                //Cursor.lockState = CursorLockMode.Locked;
                 Resume();
             }
             else
             {
-                GameManager.Instance.SetEnablePlayerInput(false);
-                Cursor.lockState = CursorLockMode.Confined;
+                //GameManager.Instance.SetEnablePlayerInput(false);
+                //Cursor.lockState = CursorLockMode.Confined;
                 Pause();
             }
 
@@ -32,14 +32,22 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f; // congela el tiempo
+        GameManager.Instance.SetEnablePlayerInput(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         isPaused = true;
+        GameManager.Instance.SetPaused(true);
     }
 
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        GameManager.Instance.SetEnablePlayerInput(true);
         Time.timeScale = 1f; // reanuda el tiempo
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         isPaused = false;
+        GameManager.Instance.SetPaused(false);
     }
 
     public void Restart()

@@ -120,7 +120,7 @@ namespace Assets.Scripts.UI
                     currentPanel = null;
                 }
 
-                Debug.Log($"[GeneralUIManager] Panel ocultado: {typePanel}", gameObject);
+                //Debug.Log($"[GeneralUIManager] Panel ocultado: {typePanel}", gameObject);
             }
             else
             {
