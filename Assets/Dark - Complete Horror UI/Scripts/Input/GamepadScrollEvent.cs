@@ -41,13 +41,13 @@ namespace Michsky.UI.Dark
             if (gamepadManager == null)
             {
 #if UNITY_2023_2_OR_NEWER
-                var tempManager = FindObjectsByType<GamepadChecker>(FindObjectsSortMode.None)[0];
+                //var tempManager = FindObjectsByType<GamepadChecker>(FindObjectsSortMode.None)[0];
 #else
                 var tempManager = (GamepadChecker)FindObjectsOfType(typeof(GamepadChecker))[0];
 #endif
 
-                if (tempManager != null)
-                    gamepadManager = tempManager;
+                //if (tempManager != null)
+                //    gamepadManager = tempManager;
             }
 
             if (optimizeUpdates == true)
