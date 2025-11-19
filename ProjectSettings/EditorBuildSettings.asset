@@ -6,17 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu (Desktop).unity
-    guid: 5247271de4c27db44bab1ee8f97564bd
-  - enabled: 1
-    path: Assets/Scenes/Anden.unity
-    guid: 9525644041c992040aa1df7ff9de0c25
-  - enabled: 1
     path: Assets/Scenes/Hall_Principal.unity
     guid: de9824433682dc846a396a5508b51637
   - enabled: 1
-    path: Assets/Scenes/Subway_train.unity
-    guid: 92cdc0d231f20394aab5433367f4a8e9
+    path: Assets/ThunderWire Studio/UHFPS/Content/Scenes/LevelManager.unity
+    guid: e8115f250f482ec4d8ad6ea1dc55e505
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.addressableassets: {fileID: 11400000, guid: ae838b1c970aab641bb8e4643590df24, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: ce68c4c37abec5347801e4204a280574, type: 2}
   m_UseUCBPForAssetBundles: 0
