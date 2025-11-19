@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ThunderWire Studio/UHFPS/Content/Art/Models/Misc/Trace/Textures/Bullet.png.meta
 guid: e390e0a82bd68416ca99f8ddffda5913
+========
+guid: d214017165a94934e97da4f805ac8e99
+>>>>>>>> ab6faf74d6295d542437421e5965529f9a5b0c2e:Assets/Scenes/Anden/Lightmap-10_comp_shadowmask.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,7 +97,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<<< HEAD:Assets/ThunderWire Studio/UHFPS/Content/Art/Models/Misc/Trace/Textures/Bullet.png.meta
   - serializedVersion: 3
+========
+  - serializedVersion: 4
+>>>>>>>> ab6faf74d6295d542437421e5965529f9a5b0c2e:Assets/Scenes/Anden/Lightmap-10_comp_shadowmask.png.meta
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -105,9 +113,15 @@ TextureImporter:
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
+<<<<<<<< HEAD:Assets/ThunderWire Studio/UHFPS/Content/Art/Models/Misc/Trace/Textures/Bullet.png.meta
     forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Server
+========
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+>>>>>>>> ab6faf74d6295d542437421e5965529f9a5b0c2e:Assets/Scenes/Anden/Lightmap-10_comp_shadowmask.png.meta
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1

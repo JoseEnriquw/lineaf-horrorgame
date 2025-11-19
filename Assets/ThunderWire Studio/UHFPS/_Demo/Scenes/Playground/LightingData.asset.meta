@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ThunderWire Studio/UHFPS/_Demo/Scenes/Playground/LightingData.asset.meta
 guid: 370b178adaec2aa45a5d5045a0720e22
+========
+guid: bffc8610500d3b84f93f150a1f023fa3
+>>>>>>>> ab6faf74d6295d542437421e5965529f9a5b0c2e:Assets/Scenes/Anden/LightingData.asset.meta
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 112000000
+  mainObjectFileID: 6475696996188705980
   userData: 
   assetBundleName: 
   assetBundleVariant: 
