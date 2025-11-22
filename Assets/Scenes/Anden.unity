@@ -16961,8 +16961,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280323036}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1.4551915e-11, w: 1}
-  m_LocalPosition: {x: -53.59, y: 4.61, z: 9.698406}
+  m_LocalRotation: {x: -1.35297875e-11, y: 0.92976004, z: 5.3575217e-12, w: 0.36816615}
+  m_LocalPosition: {x: -51.454002, y: 3.697, z: 9.698406}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31502,14 +31502,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481499949}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 2.910383e-11, w: 1}
-  m_LocalPosition: {x: 3.31, y: 3.01, z: -23.101591}
+  m_LocalRotation: {x: -2.7059577e-11, y: 0.92976004, z: 1.0715044e-11, w: 0.36816615}
+  m_LocalPosition: {x: 5.446, y: 2.097, z: -23.101591}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1312269403}
   m_Father: {fileID: 1446523797}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 136.795, z: 0}
 --- !u!1001 &482293238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33123,6 +33123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8bdf8f603d2f8479a5fb65b9c3eb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
+  message: 
+  messageDuration: 5
   ElevatorSystem: {fileID: 976249433}
   InteractType: 1
   FloorLevel: 1
@@ -45941,6 +45944,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UHFPS.Runtime.DynamicObject, Assembly-CSharp
+          m_MethodName: TryUnlockResult
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UHFPS.Runtime.DynamicObject, Assembly-CSharp
+          m_MethodName: SetOpenState
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
     OnDisconnected:
       m_PersistentCalls:
         m_Calls: []
@@ -58091,6 +58118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8bdf8f603d2f8479a5fb65b9c3eb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
+  message: 
+  messageDuration: 5
   ElevatorSystem: {fileID: 976249433}
   InteractType: 1
   FloorLevel: 0
@@ -67250,7 +67280,7 @@ MonoBehaviour:
   - {fileID: 953420911}
   - {fileID: 1074108767}
   FloorOffset: {x: 0, y: 0, z: 0}
-  OneFloorDuration: 2
+  OneFloorDuration: 5
   AutoDoorCloseTime: 5
   VerticalMoveOnly: 1
   OpenDoorTrigger: Open
@@ -78867,6 +78897,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8bdf8f603d2f8479a5fb65b9c3eb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
+  message: 
+  messageDuration: 5
   ElevatorSystem: {fileID: 0}
   InteractType: 1
   FloorLevel: 2
@@ -123733,8 +123766,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DynamicTitle:
     ReflectType: 0
-    Instance: {fileID: 0}
-    ReflectName: 
+    Instance: {fileID: 1791272095}
+    ReflectName: canInteract
     ReflectDerived: 0
   DynamicUseTitle:
     ReflectType: 0
@@ -123756,10 +123789,10 @@ MonoBehaviour:
     GlocText: '*Call Button'
     NormalText: 
   TrueTitle:
-    GlocText: 
+    GlocText: '*Call Button'
     NormalText: 
   FalseTitle:
-    GlocText: 
+    GlocText: '*El ascensor no funcion debes arreglar el circuito electrico'
     NormalText: 
   UseTitle:
     GlocText: 
@@ -123791,6 +123824,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8bdf8f603d2f8479a5fb65b9c3eb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
+  message: 
+  messageDuration: 5
   ElevatorSystem: {fileID: 976249433}
   InteractType: 0
   FloorLevel: 0
@@ -125580,8 +125616,8 @@ MonoBehaviour:
     ReflectDerived: 0
   DynamicUseTitle:
     ReflectType: 0
-    Instance: {fileID: 0}
-    ReflectName: 
+    Instance: {fileID: 1791272095}
+    ReflectName: canInteract
     ReflectDerived: 0
   DynamicExamineTitle:
     ReflectType: 0
@@ -125592,7 +125628,7 @@ MonoBehaviour:
   OverrideUseTitle: 0
   OverrideExamineTitle: 0
   UseTitleDynamic: 0
-  UseUseTitleDynamic: 0
+  UseUseTitleDynamic: 1
   UseExamineTitleDynamic: 0
   Title:
     GlocText: '*Call Button'
@@ -125607,10 +125643,10 @@ MonoBehaviour:
     GlocText: 
     NormalText: 
   TrueUseTitle:
-    GlocText: 
+    GlocText: '*Cadddd'
     NormalText: 
   FalseUseTitle:
-    GlocText: 
+    GlocText: '*ffffffffff'
     NormalText: 
   ExamineTitle:
     GlocText: 
@@ -125633,6 +125669,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8bdf8f603d2f8479a5fb65b9c3eb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
+  message: '*El ascensor no funciona, tengo que arreglar el circuito electrico'
+  messageDuration: 5
   ElevatorSystem: {fileID: 976249433}
   InteractType: 0
   FloorLevel: 1
