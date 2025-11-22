@@ -8821,6 +8821,8 @@ MonoBehaviour:
   BackgroundFader: {fileID: 6232774375700191767}
   NewGameSceneName: Playground
   NewGameRemoveSaves: 1
+  audioSource: {fileID: 0}
+  menuClip: {fileID: 0}
 --- !u!114 &7217707455595302133
 MonoBehaviour:
   m_ObjectHideFlags: 0
