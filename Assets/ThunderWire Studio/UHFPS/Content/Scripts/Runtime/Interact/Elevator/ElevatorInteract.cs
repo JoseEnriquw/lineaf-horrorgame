@@ -11,6 +11,7 @@ namespace UHFPS.Runtime
     {
         public enum InteractTypeEnum { CallElevator, FloorSelect }
         private ElevatorInteract[] interacts;
+        private bool canInteract = true;
 
         [Space]
         public ElevatorSystem ElevatorSystem;
@@ -34,30 +35,33 @@ namespace UHFPS.Runtime
 
         public void InteractStart()
         {
-            if (ElevatorSystem == null || ElevatorSystem.State == ElevatorSystem.ElevatorState.Moving)
-                return;
+            if (canInteract)
+            {
+                if (ElevatorSystem == null || ElevatorSystem.State == ElevatorSystem.ElevatorState.Moving)
+                    return;
 
-            bool interact = true;
-            if(InteractType == InteractTypeEnum.CallElevator)
-            {
-                interact = ElevatorSystem.CallElevator(this);
-            }
-            else if(ElevatorSystem.PlayerEntered)
-            {
-                DisableOtherEmissions();
-                ElevatorSystem.MoveElevatorToLevel(this);
-            }
-            else
-            {
-                interact = false;
-            }
+                bool interact = true;
+                if(InteractType == InteractTypeEnum.CallElevator)
+                {
+                    interact = ElevatorSystem.CallElevator(this);
+                }
+                else if(ElevatorSystem.PlayerEntered)
+                {
+                    DisableOtherEmissions();
+                    ElevatorSystem.MoveElevatorToLevel(this);
+                }
+                else
+                {
+                    interact = false;
+                }
 
-            if (interact)
-            {
-                if (IndicatorMaterial.IsAssigned)
-                    IndicatorMaterial.ClonedMaterial.EnableKeyword(EmissionKeyword);
+                if (interact)
+                {
+                    if (IndicatorMaterial.IsAssigned)
+                        IndicatorMaterial.ClonedMaterial.EnableKeyword(EmissionKeyword);
 
-                GameTools.PlayOneShot3D(transform.position, PressSound, "ButonPressSound");
+                    GameTools.PlayOneShot3D(transform.position, PressSound, "ButonPressSound");
+                }
             }
         }
 
@@ -77,5 +81,11 @@ namespace UHFPS.Runtime
                 button.SetEmission(false);
             }
         }
+
+        public void SetCanInteract(bool state)
+        {
+            canInteract = state;
+        }
+
     }
 }
