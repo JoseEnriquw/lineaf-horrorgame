@@ -11,7 +11,12 @@ namespace UHFPS.Runtime
     {
         public enum InteractTypeEnum { CallElevator, FloorSelect }
         private ElevatorInteract[] interacts;
-        private bool canInteract = true;
+        public bool canInteract = true;
+        [Header("Message Settings")]
+        public string informativeMessage="El ascensor no funciona, tengo que arreglar el circuito electrico";
+        [SerializeField]
+        private float messageDuration = 5f;
+
 
         [Space]
         public ElevatorSystem ElevatorSystem;
@@ -62,6 +67,11 @@ namespace UHFPS.Runtime
 
                     GameTools.PlayOneShot3D(transform.position, PressSound, "ButonPressSound");
                 }
+            }
+            else
+            {
+                GameTools.PlayOneShot3D(transform.position, PressSound, "ButonPressSound");
+                GameManager.Instance.ShowHintMessage(informativeMessage, messageDuration); 
             }
         }
 

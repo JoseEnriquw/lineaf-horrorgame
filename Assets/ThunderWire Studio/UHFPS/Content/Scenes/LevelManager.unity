@@ -142,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
       propertyPath: LevelInfos.Array.data[0].Background
       value: 
-      objectReference: {fileID: 21300000, guid: 3c762bf94ab083744b7e155558d1e83c, type: 3}
+      objectReference: {fileID: 21300000, guid: c3a8cd758908de9409f96dbe52d03f23, type: 3}
     - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
       propertyPath: LevelInfos.Array.data[1].Background
       value: 
@@ -190,6 +190,10 @@ PrefabInstance:
     - target: {fileID: 2674515566535311797, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
       propertyPath: m_Name
       value: LEVELMANAGER
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674515566535311797, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2889049964343838668, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
       propertyPath: m_LocalPosition.x

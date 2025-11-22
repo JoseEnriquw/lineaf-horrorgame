@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using ThunderWire.Attributes;
@@ -11,6 +11,19 @@ namespace UHFPS.Runtime
         public BackgroundFader BackgroundFader;
         public string NewGameSceneName;
         public bool NewGameRemoveSaves;
+
+        [Header("Audio Menu")]
+        public AudioSource audioSource;   // ← Agregás un AudioSource acá
+        public AudioClip menuClip;        // ← El sonido del menú
+
+        void Start()
+        {
+            if (audioSource != null && menuClip != null)
+            {
+                audioSource.PlayOneShot(menuClip);
+            }
+        }
+
 
         public void NewGame()
         {
