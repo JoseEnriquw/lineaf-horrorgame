@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class LightWallMover : MonoBehaviour
 {
+
+    public Transform player; 
     public float speed = 10f;
     private bool shouldMove = false;
 
@@ -13,6 +15,9 @@ public class LightWallMover : MonoBehaviour
     void Update()
     {
         if (shouldMove)
-            transform.Translate(Vector3.left * speed * Time.deltaTime); 
+        {
+            Vector3 dir = (player.position - transform.position).normalized;
+            transform.position += dir * speed * Time.deltaTime;
+        }
     }
 }
