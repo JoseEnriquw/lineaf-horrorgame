@@ -23827,7 +23827,6 @@ GameObject:
   - component: {fileID: 965672908}
   - component: {fileID: 965672910}
   - component: {fileID: 965672909}
-  - component: {fileID: 965672912}
   - component: {fileID: 965672911}
   m_Layer: 0
   m_Name: Rain
@@ -28397,7 +28396,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: dc13094d10dd91c469ef127f403b4d0b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -28406,9 +28405,9 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
+  DopplerLevel: 5
+  MinDistance: 0.45
+  MaxDistance: 45.02
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -28418,23 +28417,23 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.06666667
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      time: 0.370924
+      value: 0.087379456
+      inSlope: -1.0714285
+      outSlope: -1.0714285
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -28458,7 +28457,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5277778
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -28473,7 +28472,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.75
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -28483,22 +28482,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &965672912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 965672907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d94f91c7a8dbd7645845494ad7250f3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 965672911}
-  sonidoLluvia: {fileID: 8300000, guid: d0ee057e229e3174fa6b26ae25a80ef8, type: 3}
-  volumen: 0.6
-  loop: 1
 --- !u!1001 &971922811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175167,7 +175150,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9b289297890b2854d9fb9df581918f6d, type: 2}
-  - {fileID: 2100000, guid: 73244d027fe05ca46b1b30e8a47d83bd, type: 2}
+  - {fileID: 2100000, guid: 4fc8f77829cc17e45b8c20de7a5e2ade, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
