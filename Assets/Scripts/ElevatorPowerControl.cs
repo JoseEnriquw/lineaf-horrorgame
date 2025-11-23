@@ -38,10 +38,6 @@ namespace UHFPS.Runtime
         private bool isPowered = false;
 
         [SerializeField]
-        [Range(0f, 1f)]
-        private float lightIntensityWhenPowered = 1f;
-
-        [SerializeField]
         private float powerToggleDuration = 0.5f;
         [SerializeField] private List<ElevatorInteract> elevatorCallButtons = new();
 
