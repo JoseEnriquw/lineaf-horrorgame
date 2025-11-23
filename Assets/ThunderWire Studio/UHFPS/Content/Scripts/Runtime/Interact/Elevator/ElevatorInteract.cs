@@ -11,6 +11,12 @@ namespace UHFPS.Runtime
     {
         public enum InteractTypeEnum { CallElevator, FloorSelect }
         private ElevatorInteract[] interacts;
+        public bool canInteract = true;
+        [Header("Message Settings")]
+        public string informativeMessage="El ascensor no funciona, tengo que arreglar el circuito electrico";
+        [SerializeField]
+        private float messageDuration = 5f;
+
 
         [Space]
         public ElevatorSystem ElevatorSystem;
@@ -34,30 +40,38 @@ namespace UHFPS.Runtime
 
         public void InteractStart()
         {
-            if (ElevatorSystem == null || ElevatorSystem.State == ElevatorSystem.ElevatorState.Moving)
-                return;
+            if (canInteract)
+            {
+                if (ElevatorSystem == null || ElevatorSystem.State == ElevatorSystem.ElevatorState.Moving)
+                    return;
 
-            bool interact = true;
-            if(InteractType == InteractTypeEnum.CallElevator)
-            {
-                interact = ElevatorSystem.CallElevator(this);
-            }
-            else if(ElevatorSystem.PlayerEntered)
-            {
-                DisableOtherEmissions();
-                ElevatorSystem.MoveElevatorToLevel(this);
+                bool interact = true;
+                if(InteractType == InteractTypeEnum.CallElevator)
+                {
+                    interact = ElevatorSystem.CallElevator(this);
+                }
+                else if(ElevatorSystem.PlayerEntered)
+                {
+                    DisableOtherEmissions();
+                    ElevatorSystem.MoveElevatorToLevel(this);
+                }
+                else
+                {
+                    interact = false;
+                }
+
+                if (interact)
+                {
+                    if (IndicatorMaterial.IsAssigned)
+                        IndicatorMaterial.ClonedMaterial.EnableKeyword(EmissionKeyword);
+
+                    GameTools.PlayOneShot3D(transform.position, PressSound, "ButonPressSound");
+                }
             }
             else
             {
-                interact = false;
-            }
-
-            if (interact)
-            {
-                if (IndicatorMaterial.IsAssigned)
-                    IndicatorMaterial.ClonedMaterial.EnableKeyword(EmissionKeyword);
-
                 GameTools.PlayOneShot3D(transform.position, PressSound, "ButonPressSound");
+                GameManager.Instance.ShowHintMessage(informativeMessage, messageDuration); 
             }
         }
 
@@ -77,5 +91,11 @@ namespace UHFPS.Runtime
                 button.SetEmission(false);
             }
         }
+
+        public void SetCanInteract(bool state)
+        {
+            canInteract = state;
+        }
+
     }
 }
