@@ -398,7 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicType: 0
   transformType: 0
-  dynamicStatus: 0
+  dynamicStatus: 1
   interactType: 0
   statusChange: 0
   target: {fileID: 8877481642219650065}
@@ -411,17 +411,17 @@ MonoBehaviour:
   unlockScript: {fileID: 0}
   keepUnlockItem: 0
   unlockItem:
-    m_GUID: 
+    m_GUID: b70a06636e824c48a8631756ccb04b3c
     m_Item:
-      Name: 
-      GUID: 
-      Icon: {fileID: 0}
+      Name: Key 01
+      GUID: b70a06636e824c48a8631756ccb04b3c
+      Icon: {fileID: 2800000, guid: 5bbd29b842d27754596feeb5f711b24a, type: 3}
     m_Section:
-      Name: 
-      GUID: 
-  showLockedText: 0
+      Name: Keys
+      GUID: 9ce7786df37c4160ae9a0542acd94613
+  showLockedText: 1
   lockedText:
-    GlocText: 
+    GlocText: Requiere Acceso
     NormalText: 
   ignoreColliders: []
   ignorePlayerCollider: 0
@@ -910,6 +910,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3067417961903616072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5649372542440090034}
+  m_Layer: 0
+  m_Name: DoorPadre
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5649372542440090034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067417961903616072}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 9.873, y: 2.315, z: -0.287}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1086566212459806040}
+  m_Father: {fileID: 5533969173792286807}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &3452378310228350279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,9 +1488,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5379751122992055250}
   serializedVersion: 2
-  m_LocalRotation: {x: -9.318241e-10, y: -0.99992716, z: -7.542612e-10, w: 0.012067326}
-  m_LocalPosition: {x: 9.807, y: 2.292, z: 0.515}
-  m_LocalScale: {x: 0.8368986, y: 1.0356541, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.94, y: 1.09, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3053543884904853758}
@@ -1467,8 +1499,8 @@ Transform:
   - {fileID: 8066211755547835033}
   - {fileID: 709897969347027502}
   - {fileID: 3341733847700657461}
-  m_Father: {fileID: 5533969173792286807}
-  m_LocalEulerAnglesHint: {x: 0, y: -178.617, z: 0}
+  m_Father: {fileID: 5649372542440090034}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1226430695096390681
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1557,7 +1589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dynamicType: 0
   transformType: 0
-  dynamicStatus: 0
+  dynamicStatus: 1
   interactType: 0
   statusChange: 0
   target: {fileID: 1086566212459806040}
@@ -1570,17 +1602,17 @@ MonoBehaviour:
   unlockScript: {fileID: 0}
   keepUnlockItem: 0
   unlockItem:
-    m_GUID: 
+    m_GUID: 12bb84ecda3946579a8db52385d1f86b
     m_Item:
-      Name: 
-      GUID: 
-      Icon: {fileID: 0}
+      Name: Key 02
+      GUID: 12bb84ecda3946579a8db52385d1f86b
+      Icon: {fileID: 2800000, guid: af115a1c0c170204f8bde12e8c626416, type: 3}
     m_Section:
-      Name: 
-      GUID: 
-  showLockedText: 0
+      Name: Keys
+      GUID: 9ce7786df37c4160ae9a0542acd94613
+  showLockedText: 1
   lockedText:
-    GlocText: 
+    GlocText: '*Requiere Llave'
     NormalText: 
   ignoreColliders: []
   ignorePlayerCollider: 0
@@ -2097,7 +2129,7 @@ Transform:
   - {fileID: 5814859276742154091}
   - {fileID: 7678898982466164141}
   - {fileID: 7386340525608855643}
-  - {fileID: 1086566212459806040}
+  - {fileID: 5649372542440090034}
   - {fileID: 6399637942675340492}
   - {fileID: 2438196898415677184}
   - {fileID: 8387914942077809873}
