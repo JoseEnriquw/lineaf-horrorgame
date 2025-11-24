@@ -47,7 +47,7 @@ public class AudioPistaPuzzle : MonoBehaviour
             if (anuncioClip != null)
             {
                 audioSource.Play();
-                GameManager.Instance.ShowHintMessage("Atención pasajeros..... el servicio de la Línea F con destino a.......... partirá desde el andén 4..... a las 0: 2..... 5.",5f);
+                GameManager.Instance.ShowHintMessage("Atención pasajeros..... el servicio de la Línea F con destino a.......... partirá desde el andén 4..... a las 1: 2..... 5.",5f);
                 // Ejemplo: UIManager.Instance.MostrarSubtitulo("Atención pasajeros... andén 4...");
             }
 
