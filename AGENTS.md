@@ -2,7 +2,7 @@
 - Project name: lineaf-horrorgame
 - Unity version: Unity 6000.0.60f1
 - Active game object:
-  - Name: Vagon (2)
+  - Name: Fill
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
