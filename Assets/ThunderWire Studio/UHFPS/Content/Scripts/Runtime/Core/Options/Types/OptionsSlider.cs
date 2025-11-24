@@ -48,7 +48,7 @@ namespace UHFPS.Runtime
 
         public override void SetOptionData(StorableCollection data)
         {
-            if(data.TryGetValue("settings", out object[] settings))
+            if (data.TryGetValue("settings", out object[] settings))
             {
                 SliderType = (SliderTypeEnum)settings[0];
                 SliderLimits = (MinMax)settings[1];

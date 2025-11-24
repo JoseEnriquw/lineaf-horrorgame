@@ -8,8 +8,8 @@
   "show_fps": true,
   "display": 0,
   "fullscreen": false,
-  "resolution_width": 2560,
-  "resolution_height": 1440,
+  "resolution_width": 640,
+  "resolution_height": 480,
   "framerate": -1,
   "vsync": 0,
   "antialiasing_mode": 0,
@@ -21,6 +21,6 @@
   "pp_vignette": true,
   "pp_grain": true,
   "pp_chromatic_aberration": true,
-  "volume_general": 1.0,
+  "volume_general": 0.450000018,
   "volume_music": 1.0
 }
