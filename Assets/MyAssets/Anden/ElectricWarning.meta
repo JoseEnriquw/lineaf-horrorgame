@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/MyAssets/Anden.meta
+guid: b6750657707dfe646a0a0dfbc872b858
+========
 guid: ae9daea690cfb694f8d401d24b505556
+>>>>>>>> 5bc40563a16144a8478f9392ed7c121b34afcfcc:Assets/MyAssets/Anden/ElectricWarning.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

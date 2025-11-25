@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sounds/AmbientAnden.wav.meta
+guid: 1df9508144c11754999a2d2af6779616
+========
+guid: 181fd530a27080f4b994b17a93331939
+>>>>>>>> 5bc40563a16144a8478f9392ed7c121b34afcfcc:Assets/Sounds/Reja Oxidada.wav.meta
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 8
+  defaultSettings:
+    serializedVersion: 2
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+    preloadAudioData: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

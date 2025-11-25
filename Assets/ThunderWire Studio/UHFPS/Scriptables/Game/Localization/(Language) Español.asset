@@ -994,3 +994,7 @@ MonoBehaviour:
     SectionId: 70584943
     Key: options.separator.pp
     Value: 
+  - EntryId: 31786914
+    SectionId: 70584943
+    Key: options.audio.sfx
+    Value: 

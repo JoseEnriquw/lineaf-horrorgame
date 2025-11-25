@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Hall_Anden/Anden_Hall Global Volume Profile.asset.meta
+guid: 25cc39b1c7eb09540964c87830f3796d
+========
 guid: 73a1570314eedf24a885e5009bb2e822
+>>>>>>>> 5bc40563a16144a8478f9392ed7c121b34afcfcc:Assets/Scenes/Hall_Anden/Hall_Anden Baking Set.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

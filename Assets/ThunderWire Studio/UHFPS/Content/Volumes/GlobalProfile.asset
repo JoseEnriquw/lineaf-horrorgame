@@ -29,11 +29,11 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 65472
   tint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 0.3529412, b: 0.40000004, a: 1}
   highQualityFiltering:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   downscale:
     m_OverrideState: 0
     m_Value: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 0.3
 --- !u!114 &-1997867011379247046
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -264,6 +264,48 @@ MonoBehaviour:
   BlurRadius:
     m_OverrideState: 0
     m_Value: 2
+--- !u!114 &-1291674055376224437
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee751481990022498d1a2a65160e587, type: 3}
+  m_Name: BloodDisortion
+  m_EditorClassIdentifier: 
+  active: 1
+  BlendColor:
+    m_OverrideState: 1
+    m_Value: {r: 0.019607844, g: 0.015686275, b: 0.015686275, a: 1}
+    hdr: 0
+  OverlayColor:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    hdr: 0
+  BlendTexture:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+  BumpTexture:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+  BloodAmount:
+    m_OverrideState: 0
+    m_Value: 0
+  MinBloodAmount:
+    m_OverrideState: 0
+    m_Value: 0
+  MaxBloodAmount:
+    m_OverrideState: 0
+    m_Value: 1
+  EdgeSharpness:
+    m_OverrideState: 0
+    m_Value: 0.5
+  Distortion:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &-296828529979844282
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -306,6 +348,7 @@ MonoBehaviour:
   - {fileID: -3971140415863620753}
   - {fileID: -4979537181270152845}
   - {fileID: 7711244674349729937}
+  - {fileID: -1291674055376224437}
 --- !u!114 &2296498522438197286
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -408,8 +451,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0.3
   smoothness:
-    m_OverrideState: 0
-    m_Value: 0.2
+    m_OverrideState: 1
+    m_Value: 1
   rounded:
     m_OverrideState: 0
     m_Value: 0
