@@ -19478,7 +19478,7 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 3
   overridesSubdivLevels: 0
-  mightNeedRebaking: 0
+  mightNeedRebaking: 1
   cachedTransform:
     e00: 0.9515517
     e01: 0
@@ -22446,7 +22446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83d2f7ae04ab6f4f99b0d85377be998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializedBakingSet: {fileID: 11400000, guid: d82f96e5796229c4b8ea4f29dff44a78, type: 2}
+  serializedBakingSet: {fileID: 0}
   sceneGUID: de9824433682dc846a396a5508b51637
   obsoleteAsset: {fileID: 0}
   obsoleteCellSharedDataAsset: {fileID: 0}
@@ -36899,7 +36899,7 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 3
   overridesSubdivLevels: 0
-  mightNeedRebaking: 0
+  mightNeedRebaking: 1
   cachedTransform:
     e00: 0.9515517
     e01: 0
@@ -38361,7 +38361,7 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 3
   overridesSubdivLevels: 0
-  mightNeedRebaking: 0
+  mightNeedRebaking: 1
   cachedTransform:
     e00: 0.9999946
     e01: 0
@@ -39939,7 +39939,7 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 3
   overridesSubdivLevels: 0
-  mightNeedRebaking: 0
+  mightNeedRebaking: 1
   cachedTransform:
     e00: 0.6585584
     e01: 0
@@ -41572,7 +41572,7 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 3
   overridesSubdivLevels: 0
-  mightNeedRebaking: 0
+  mightNeedRebaking: 1
   cachedTransform:
     e00: 0.65855837
     e01: 0.000000007450581
@@ -98344,7 +98344,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: baead189e326b114e905bc93ece94339, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.04
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -126551,6 +126551,8 @@ MonoBehaviour:
   SliderValue: 1
   UseSnapping: 1
   SnapValue: 0.1
+  TargetAudioSources: []
+  Category: 0
 --- !u!222 &3960820099547085734
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -146553,6 +146555,8 @@ MonoBehaviour:
   SliderValue: 0
   UseSnapping: 1
   SnapValue: 0.05
+  TargetAudioSources: []
+  Category: 0
 --- !u!4 &4823753716581401348
 Transform:
   m_ObjectHideFlags: 0
@@ -146696,6 +146700,8 @@ MonoBehaviour:
   SliderValue: 60
   UseSnapping: 0
   SnapValue: 0
+  TargetAudioSources: []
+  Category: 0
 --- !u!222 &4830765802816331639
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -150164,7 +150170,7 @@ Transform:
   m_GameObject: {fileID: 872547872148856075}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1.4551915e-11, w: 1}
-  m_LocalPosition: {x: -56.9, y: 2.7, z: 29.099995}
+  m_LocalPosition: {x: -52.639297, y: 3.8000002, z: 9.698404}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -166216,6 +166222,10 @@ MonoBehaviour:
   SliderValue: 1
   UseSnapping: 1
   SnapValue: 0.05
+  TargetAudioSources:
+  - {fileID: 9140333146305194417}
+  - {fileID: 2355871668982938162}
+  Category: 1
 --- !u!4 &5970644426391636976
 Transform:
   m_ObjectHideFlags: 0
@@ -166636,6 +166646,9 @@ MonoBehaviour:
   SliderValue: 1
   UseSnapping: 1
   SnapValue: 0.05
+  TargetAudioSources:
+  - {fileID: 9140333146305194417}
+  Category: 0
 --- !u!23 &6006067859433287464
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -169362,6 +169375,8 @@ MonoBehaviour:
   SliderValue: 1
   UseSnapping: 1
   SnapValue: 0.1
+  TargetAudioSources: []
+  Category: 0
 --- !u!114 &6147536810814188655
 MonoBehaviour:
   m_ObjectHideFlags: 0

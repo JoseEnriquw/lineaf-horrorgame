@@ -33695,7 +33695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerType: 2
-  objectiveType: 1
+  objectiveType: 0
   objectiveToAdd:
     ObjectiveKey: 
     SubObjectives: []

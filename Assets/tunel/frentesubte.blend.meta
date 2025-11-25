@@ -3,7 +3,32 @@ guid: ee2fcdc6d55ffa44fb8f3b1be3b0b4a4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_ext_parts_01
+    second: {fileID: 2100000, guid: 0e68b4d828cd717468e8b60691a07b14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_exterior_trims_01
+    second: {fileID: 2100000, guid: 642b1ca6673d2d54c9477c758a8314a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_metal_dull_01
+    second: {fileID: 2100000, guid: 0146dbf9c0d2af54e8ebcee347b604c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_plastic_01
+    second: {fileID: 2100000, guid: 2c2728ded28e9cb44acc7897aece2ad2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MM_scrolling_marquee_01
+    second: {fileID: 2100000, guid: 925987cc64050754fa3844567ac8649c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -30,7 +55,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages:
     - 0.25
@@ -39,7 +64,7 @@ ModelImporter:
     - 0.01
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
