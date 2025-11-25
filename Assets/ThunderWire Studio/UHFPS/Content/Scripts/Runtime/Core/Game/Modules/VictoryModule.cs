@@ -13,30 +13,31 @@ namespace UHFPS.Runtime
         /// <summary>
         /// Método público para activar la victoria.
         /// </summary>
-        public void TriggerVictory()
+        /// <param name="victoryClip">Clip de música opcional para reproducir.</param>
+        public void TriggerVictory(AudioClip victoryClip = null)
         {
             // Buscamos la referencia "Victory" en el GameManager
             if (GameManager.GraphicReferences.Value.TryGetValue("Victory", out Behaviour[] uiRefs))
             {
                 // Esperamos el siguiente orden en las referencias:
                 // [0] -> CanvasGroup (El Panel)
-                // [1] -> Button (Botón Volver al Menú) - Opcional
-                // [2] -> AudioSource (Música de Fondo) - Opcional
+                // [1] -> Button (Botón Volver al Menú)
+                // [2] -> AudioSource (Source de Ambientación/Música)
 
                 if (uiRefs.Length > 0 && uiRefs[0] is CanvasGroup panel)
                 {
                     UnityEngine.UI.Button menuButton = null;
-                    AudioSource victoryMusic = null;
+                    AudioSource ambientSource = null;
 
                     // Intentamos obtener el botón si existe
                     if (uiRefs.Length > 1 && uiRefs[1] is UnityEngine.UI.Button btn) 
                         menuButton = btn;
 
-                    // Intentamos obtener el audio si existe
+                    // Intentamos obtener el audio source de ambientación
                     if (uiRefs.Length > 2 && uiRefs[2] is AudioSource audio) 
-                        victoryMusic = audio;
+                        ambientSource = audio;
 
-                    RunCoroutine(ShowVictoryRoutine(panel, menuButton, victoryMusic));
+                    RunCoroutine(ShowVictoryRoutine(panel, menuButton, ambientSource, victoryClip));
                 }
                 else
                 {
@@ -49,14 +50,22 @@ namespace UHFPS.Runtime
             }
         }
 
-        private IEnumerator ShowVictoryRoutine(CanvasGroup panel, UnityEngine.UI.Button menuBtn, AudioSource music)
+        private IEnumerator ShowVictoryRoutine(CanvasGroup panel, UnityEngine.UI.Button menuBtn, AudioSource audioSource, AudioClip musicClip)
         {
             // 0. Asegurar que el objeto esté activo
             panel.gameObject.SetActive(true);
-            panel.alpha = 0f; // Asegurar que empiece invisible para el fade
+            panel.alpha = 0f;
 
-            // 1. Configurar el estado del juego (Congelar, ocultar HUD)
+            // 1. Configurar el estado del juego
             GameManager.FreezePlayer(true, showCursor: true, lockInput: true);
+            
+            // IMPORTANTE: Desactivar la interacción del panel de juego para que no bloquee los clics
+            if (GameManager.GamePanel != null)
+            {
+                GameManager.GamePanel.interactable = false;
+                GameManager.GamePanel.blocksRaycasts = false;
+            }
+
             GameManager.DisableAllGamePanels();
             GameManager.OverlaysParent.SetActive(false);
 
@@ -66,15 +75,17 @@ namespace UHFPS.Runtime
                 menuBtn.onClick.RemoveAllListeners();
                 menuBtn.onClick.AddListener(() => 
                 {
-                    // Usamos la función nativa de UHFPS para volver al menú
                     GameManager.MainMenu();
                 });
             }
 
-            // 3. Reproducir música
-            if (music != null)
+            // 3. Configurar y reproducir música en el source de ambientación
+            if (audioSource != null && musicClip != null)
             {
-                music.Play();
+                audioSource.Stop(); // Detener lo que esté sonando
+                audioSource.clip = musicClip;
+                audioSource.loop = true; // Opcional: si quieres que se repita
+                audioSource.Play();
             }
 
             // 4. Aplicar Blur
