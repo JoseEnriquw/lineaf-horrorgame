@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sounds/Reja Oxidada.wav.meta
+guid: 181fd530a27080f4b994b17a93331939
+========
 guid: d76b08357dd691348bba85aa7402aa67
+>>>>>>>> 5bc40563a16144a8478f9392ed7c121b34afcfcc:Assets/Sounds/atencion pasajeros2.mp3.meta
 AudioImporter:
   externalObjects: {}
   serializedVersion: 8
@@ -11,7 +15,11 @@ AudioImporter:
     compressionFormat: 1
     quality: 1
     conversionMode: 0
+<<<<<<<< HEAD:Assets/Sounds/Reja Oxidada.wav.meta
+    preloadAudioData: 0
+========
     preloadAudioData: 1
+>>>>>>>> 5bc40563a16144a8478f9392ed7c121b34afcfcc:Assets/Sounds/atencion pasajeros2.mp3.meta
   platformSettingOverrides: {}
   forceToMono: 0
   normalize: 1

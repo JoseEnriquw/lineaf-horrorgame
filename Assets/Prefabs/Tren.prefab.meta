@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Tren.prefab.meta
 guid: 533b7f3bdaa2568448450adf679bc469
+========
+guid: 3fd545b5461a8424b8daa5ce0ba4ad73
+>>>>>>>> 5bc40563a16144a8478f9392ed7c121b34afcfcc:Assets/Prefabs/Vagon 1.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
