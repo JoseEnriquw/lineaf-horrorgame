@@ -1,14 +1,14 @@
 {
-  "id": "e3387620b9d84125b815a85ad85355b8",
+  "id": "67943888beab465aa83bce55c40dbb89",
   "playerData": {
     "position": {
-      "x": 11.66361,
-      "y": 1.20441544,
-      "z": -0.155568838
+      "x": 1.26868,
+      "y": 1.20441556,
+      "z": -0.394759417
     },
     "rotation": {
-      "x": 83.6500854,
-      "y": 12.6000977
+      "x": 54.2500229,
+      "y": -10.6000023
     },
     "localData": {
       "health": 100,
@@ -41,18 +41,7 @@
     "globalData": {
       "inventory": {
         "expanded": 0,
-        "items": {
-          "item_0": {
-            "item": "12bb84ecda3946579a8db52385d1f86b",
-            "quantity": 1,
-            "orientation": 0,
-            "position": {
-              "x": 0,
-              "y": 0
-            },
-            "customData": {}
-          }
-        },
+        "items": {},
         "shortcuts": {
           "shortcut_0": "{}",
           "shortcut_1": "{}",
