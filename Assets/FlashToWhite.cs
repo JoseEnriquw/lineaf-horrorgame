@@ -1,5 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+
+using ThunderWire.Attributes;
+using UHFPS.Runtime;
 
 public class FlashToWhite : MonoBehaviour
 {
@@ -7,7 +11,7 @@ public class FlashToWhite : MonoBehaviour
     public float fadeSpeed = 1.5f;
     private bool triggered = false;
     public string nextSceneName;
-
+    public BackgroundFader BackgroundFader;
     public void TriggerFlash()
     {
         triggered = true;
@@ -21,8 +25,25 @@ public class FlashToWhite : MonoBehaviour
 
             if (cg.alpha > 0.98f)
             {
-                SceneManager.LoadScene(nextSceneName);
+                //SceneManager.LoadScene(nextSceneName);
+                NewGame();
             }
         }
+    }
+    public void NewGame()
+    {
+        
+
+        SaveGameManager.ClearLoadType();
+        StartCoroutine(LoadNewGame());
+    }
+
+    IEnumerator LoadNewGame()
+    {
+        yield return BackgroundFader.StartBackgroundFade(false);
+        
+
+        SaveGameManager.LoadSceneName = "Hall_Anden";
+        SceneManager.LoadScene(SaveGameManager.LMS);
     }
 }

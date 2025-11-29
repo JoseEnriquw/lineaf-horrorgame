@@ -17,6 +17,7 @@ MonoBehaviour:
   - rid: 7073934848422838272
   - rid: 1842181370026655744
   - rid: 8154966034088460288
+  - rid: 3677312806617088103
   references:
     version: 2
     RefIds:
@@ -34,6 +35,9 @@ MonoBehaviour:
         DistanceHide: 3.5
         FadeInTime: 0.2
         FadeOutTime: 0.03
+    - rid: 3677312806617088103
+      type: {class: VictoryModule, ns: UHFPS.Runtime, asm: Assembly-CSharp}
+      data: 
     - rid: 7073934848422838272
       type: {class: InteractIconModule, ns: UHFPS.Runtime, asm: Assembly-CSharp}
       data:

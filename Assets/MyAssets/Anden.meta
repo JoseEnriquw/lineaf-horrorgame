@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Data/SavedGame.meta
+guid: a866bcdc69f06454f8a10d63b847cbbe
+========
 guid: b6750657707dfe646a0a0dfbc872b858
+>>>>>>>> 5bc40563a16144a8478f9392ed7c121b34afcfcc:Assets/MyAssets/Anden.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

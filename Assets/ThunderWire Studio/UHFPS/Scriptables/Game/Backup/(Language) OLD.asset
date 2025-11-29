@@ -573,3 +573,5 @@ MonoBehaviour:
       Text: General Volume
     - Key: audio.music
       Text: Music Volume
+    - Key: audio.sfx
+      Text: SFX Volume
