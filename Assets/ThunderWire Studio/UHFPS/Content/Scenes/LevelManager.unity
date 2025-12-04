@@ -142,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
       propertyPath: LevelInfos.Array.data[0].Background
       value: 
-      objectReference: {fileID: 21300000, guid: c3a8cd758908de9409f96dbe52d03f23, type: 3}
+      objectReference: {fileID: 21300000, guid: c0b211486211ea54dae49f32a5861020, type: 3}
     - target: {fileID: 739956880366519295, guid: a6d90327880ef514da0c37e51d684ce0, type: 3}
       propertyPath: LevelInfos.Array.data[1].Background
       value: 

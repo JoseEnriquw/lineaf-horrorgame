@@ -984,6 +984,76 @@ Transform:
   m_Children: []
   m_Father: {fileID: 243470796}
   m_LocalEulerAnglesHint: {x: 31.390858, y: 1.4203779, z: -3.208023}
+--- !u!1001 &10524108
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1081142671}
+    m_Modifications:
+    - target: {fileID: 1365641160142960, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+      propertyPath: m_Name
+      value: PlatformFloorHalf (1)_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365641160142960, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648249380154470, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648249380154470, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0097
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648249380154470, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648249380154470, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 34.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648249380154470, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648249380154470, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -52.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648249380154470, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648249380154470, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648249380154470, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648249380154470, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23974290729732576, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f226fb555a74b74e95f2656f03204e1, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+--- !u!4 &10524109 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4648249380154470, guid: 0791ab5f65a7a224e8400f7e2fe14eaa, type: 3}
+  m_PrefabInstance: {fileID: 10524108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &10579058
 GameObject:
   m_ObjectHideFlags: 0
@@ -67340,7 +67410,7 @@ MonoBehaviour:
     lockOnRotate: 0
     showGizmos: 1
   useSound1:
-    audioClip: {fileID: 8300000, guid: 181fd530a27080f4b994b17a93331939, type: 3}
+    audioClip: {fileID: 8300000, guid: e6c688d98c273714db53b8a7d6e4c06b, type: 3}
     volume: 1
   useSound2:
     audioClip: {fileID: 8300000, guid: 78fbfe8c3cad9c24b8f8c403a66c71df, type: 3}
@@ -75411,7 +75481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83d2f7ae04ab6f4f99b0d85377be998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializedBakingSet: {fileID: 11400000, guid: 78d97bbbc0f54ca4b8a72b820e7ab42a, type: 2}
+  serializedBakingSet: {fileID: 0}
   sceneGUID: ea06f48a6aad81342bd6b8d3eb5bfb04
   obsoleteAsset: {fileID: 0}
   obsoleteCellSharedDataAsset: {fileID: 0}
@@ -97643,6 +97713,7 @@ Transform:
   m_Children:
   - {fileID: 961595370}
   - {fileID: 1666714713}
+  - {fileID: 10524109}
   - {fileID: 1309251122}
   - {fileID: 685892201}
   - {fileID: 1027407328}
@@ -104775,7 +104846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6358657658636296541, guid: 533b7f3bdaa2568448450adf679bc469, type: 3}
       propertyPath: InteractSound.volume
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6358657658636296541, guid: 533b7f3bdaa2568448450adf679bc469, type: 3}
       propertyPath: InteractSound.audioClip
